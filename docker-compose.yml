@@ -6,8 +6,8 @@ services:
       - "3306:80"
     environment:
       WORDPRESS_DB_HOST: mysql
-      WORDPRESS_DB_USER: Freyda-Hub
-      WORDPRESS_DB_PASSWORD: Freyda
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: root
       WORDPRESS_DB_NAME: wordpress
     volumes:
       - ./wp-config.php:/var/www/html/wp-config.php
@@ -17,8 +17,8 @@ services:
     image: mysql:8.0
     environment:
       MYSQL_DATABASE: wordpress
-      MYSQL_USER: Freyda-Hub
-      MYSQL_PASSWORD: Freyda
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
       MYSQL_RANDOM_ROOT_PASSWORD: '1'
     volumes:
       - mysql_data:/var/lib/mysql
@@ -31,7 +31,7 @@ services:
       - "8006:80"
     environment:
       PMA_HOST: db
-      MYSQL_ROOT_PASSWORD: Freyda
+      MYSQL_ROOT_PASSWORD: root
 
 volumes:
   wordpress_data:

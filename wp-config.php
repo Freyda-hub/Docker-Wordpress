@@ -1,7 +1,7 @@
 <?php
 define('DB-NAME', 'wordpress');
-define('DB-USER', 'Freyda-Hub');
-define('DB-PASSWORD', 'Freyda');
+define('DB-USER', 'root');
+define('DB-PASSWORD', 'root');
 define('DB_HOST', 'mysql');
 define('DB_CHARSET', 'utf8');
 define('DB_COLLATE', '');
