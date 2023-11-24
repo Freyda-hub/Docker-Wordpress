@@ -1,0 +1,38 @@
+version: '3'
+services:
+  wordpress:
+    image: wordpress:latest
+    ports:
+      - "8005:80"
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_USER: Freyda-Hub
+      WORDPRESS_DB_PASSWORD: Freyda
+      WORDPRESS_DB_NAME: wordpress
+    volumes:
+      - ./wp-config.php:/var/www/html/wp-config.php
+      - wordpress_data:/var/www/html/wp-content
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: Freyda-Hub
+      MYSQL_PASSWORD: Freyda
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    links:
+      - mysql:db
+    ports:
+      - "8006:80"
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: Freyda
+
+volumes:
+  wordpress_data:
+  mysql_data:
