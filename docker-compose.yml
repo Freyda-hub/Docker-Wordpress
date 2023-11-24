@@ -3,7 +3,7 @@ services:
   wordpress:
     image: wordpress:latest
     ports:
-      - "8005:80"
+      - "3306:80"
     environment:
       WORDPRESS_DB_HOST: mysql
       WORDPRESS_DB_USER: Freyda-Hub
